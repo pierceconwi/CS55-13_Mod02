@@ -3,6 +3,8 @@ const http = require ("http");
 const fs = require("fs").promises;
 
 // CREATE LISTENER FUNCTION
+// A. LOADS HTML / REACT APP IF URL IS GOOD
+// B. LOADS RAW JSON IF URL IS UNEXPECTED
 const listenJ = function(rqst, rspns) {
   console.log(rqst.url);
   if ( rqst.url === "/") {

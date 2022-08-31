@@ -4,7 +4,11 @@
   <title>React With JSON & Node</title>
   <meta charset='utf-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1 {font-size: 1.4em;}
+    p {font-size: 1.1em;}
+  </style>
   <script
   src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -15,8 +19,11 @@
   </head>
   
   <body>
+    <div id="notes">
     <h1>React App</h1>
-    <p>by Pierce Conwi</p>
+    <p>by Pierce Conwi | CS55-13 Fall 2022</p>
+
+  </div>
     
     <div id="app">
       
@@ -25,7 +32,6 @@
  
     <script type="text/babel">
       "use strict";
-
       // function to process json data once received
       function People(prps) {
         console.log(prps);
@@ -37,7 +43,7 @@
                   <li key={pos}>
                     <p><a href={point.link}>
                       {point.name}
-                    </a>: {point.job}</p>
+                    </a>: {point.job}</p> <img src={point.pic}></img>
                   </li>
                 )
               )

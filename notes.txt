@@ -1,0 +1,1 @@
+    <p>Note: I attempted to style the app using CSS via an external stylesheet but it looks like I would need to use an import command within React. This did not seem to work / I think I'm missing a step or two - it just stopped everything in the React app from loading.</p>
