@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+ <head>
+  <title>React With JSON & Node</title>
+  <meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="style.css" rel="stylesheet" type="text/css">
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  
+  <body>
+    <h1>React App</h1>
+    <p>by Pierce Conwi</p>
+    
+    <div id="app">
+      
+    </div>
+
+ 
+    <script type="text/babel">
+      "use strict";
+
+      // function to process json data once received
+      function People(prps) {
+        console.log(prps);
+        return <div>
+            <ol>
+              {
+                prps.list.map(
+                  (point, pos) => (
+                  <li key={pos}>
+                    <p><a href={point.link}>
+                      {point.name}
+                    </a>: {point.job}</p>
+                  </li>
+                )
+              )
+            }
+            </ol>
+        </div>;
+      }
+
+
+    // pull json data using jquery
+      $.getJSON('x', function(jsonData) {
+        const theRoot = ReactDOM.createRoot( document.getElementById('app'));
+        theRoot.render(<People list={jsonData} />);
+      
+      });
+    </script>
+  </body>
+</html>
